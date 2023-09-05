@@ -1,0 +1,39 @@
+{
+  "common": {
+    "titleApp": "Привет!",
+    "slogan_1": "Где пробуждаются желания"
+  },
+  "auth": {
+    "register": "Создать аккаунт"
+  },
+  "menubar": {
+    "menuItems": {
+      "products": {
+        "title": "Продукты",
+        "dropdownItem1": "Премиум функции",
+        "dropdownItem2": "Подписки"
+      },
+      "about": {
+        "title": "О нас"
+      },
+      "safety": {
+        "title": "Советы по безопасности",
+        "dropdownItem1": "Правила сообщества",
+        "dropdownItem2": "Советы по безопасности",
+        "dropdownItem3": "Безопасность и политика",
+        "dropdownItem4": "Безопасность и жалобы",
+        "dropdownItem5": "Безопасность"
+      },
+      "support": {
+        "title": "Поддержка"
+      },
+      "download": {
+        "title": "Мобильное приложение"
+      }
+    },
+    "actions": {
+      "login": "Войти",
+      "lang": "Язык"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "common": {
+    "titleApp": "Hi!",
+    "slogan_1": "Where desires awaken"
+  },
+  "auth": {
+    "register": "Register"
+  },
+  "menubar": {
+    "menuItems": {
+      "products": {
+        "title": "Products",
+        "dropdownItem1": "Premium features",
+        "dropdownItem2": "Subscription Tiers"
+      },
+      "about": {
+        "title": "About"
+      },
+      "safety": {
+        "title": "Safety",
+        "dropdownItem1": "Community Guidelines",
+        "dropdownItem2": "Safety Tips",
+        "dropdownItem3": "Safety & Policy",
+        "dropdownItem4": "Safety & Reporting",
+        "dropdownItem5": "Security"
+      },
+      "support": {
+        "title": "Support"
+      },
+      "download": {
+        "title": "Mobile app"
+      }
+    },
+    "actions": {
+      "login": "Login",
+      "lang": "Lang"
+    }
+  }
+}

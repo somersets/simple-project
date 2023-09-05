@@ -1,3 +1,59 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["@typescript-eslint"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "globals": {
+    "JSX": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "next",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "ignorePatterns": [ "*.stories.*"],
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          // To connect redux
+          "state",
+          // For styled compoennts
+          "ctx",
+          // For hls player
+          "hlsPlayer"
+        ]
+      }
+    ],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "import/prefer-default-export": 0,
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-key": ["warn"],
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-empty-interface": ["warn"]
+  }
 }

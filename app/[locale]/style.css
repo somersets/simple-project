@@ -1,0 +1,17 @@
+.main-layout {
+    background: linear-gradient(to right, #fc5c7d, #6a82fb);
+    /*background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));*/
+    height: 100%;
+    width: 100%;
+}
+
+.main-layout::before {
+    /*content: "";*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*background: rgba(0, 0, 0, 1);*/
+    /*z-index: 0;*/
+}
