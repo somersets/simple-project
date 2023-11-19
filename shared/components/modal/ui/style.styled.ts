@@ -51,7 +51,7 @@ const Modal = styled.div<ModalStyle>`
   left: 50%;
   top: 50%;
   border-radius: ${({ theme }) => theme.roundCorners.medium};
-  background: #fff;
+  background: ${({ theme }) => theme.colors.bgColor1};
   transform: translate(-50%, -50%);
   @keyframes inAnimationScale {
     0% {
@@ -79,15 +79,25 @@ const ModalHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 0;
 `;
 
-const ModalLogo = styled.div``;
+const ModalCloseCross = styled.div`
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+`;
 
 export {
-  ModalLogo,
   Modal,
   ModalContent,
   ModalHeader,
   ModalWrapper,
   ModalContainer,
+  ModalCloseCross,
 };

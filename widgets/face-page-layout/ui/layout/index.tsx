@@ -2,7 +2,8 @@
 import * as S from "./style.styled";
 import { Typography } from "@/shared/components";
 import { useTranslations } from "next-intl";
-import { OpenRegisterPopupButton } from "@/features/open-register-popup-button";
+import { OpenRegisterPopupButton } from "../../../../features/open-register-options-popup-button";
+import { RegisterOptionsModal } from "@/widgets/modals";
 
 export default function Layout() {
   const t = useTranslations("common");
@@ -16,6 +17,7 @@ export default function Layout() {
       <S.ButtonContainer>
         <OpenRegisterPopupButton />
       </S.ButtonContainer>
+      <RegisterOptionsModal />
     </S.MainFaceLayout>
   );
 }

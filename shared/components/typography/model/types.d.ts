@@ -27,7 +27,6 @@ export interface IFontParams {
 
 export interface ITypography {
   align?: string;
-  fontSize?: string;
   className?: string;
   type?: TypographyType;
   isTranslate?: boolean;

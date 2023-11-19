@@ -49,13 +49,10 @@ export default function MenubarItems() {
   const onSetActiveItem = (id: string) => {
     setMenubarItems((prevState) =>
       prevState.map((item) => {
-        if (item.id.toString() === id) {
-          return {
-            ...item,
-            isActive: true,
-          };
-        }
-        return item;
+        return {
+          ...item,
+          isActive: item.id.toString() === id,
+        };
       }),
     );
   };
@@ -68,7 +65,10 @@ export default function MenubarItems() {
             onMouseEnter={() => onSetActiveItem((index + 1).toString())}
             onMouseLeave={() =>
               setMenubarItems((prevState) =>
-                prevState.map((item) => ({ ...item, isActive: false })),
+                prevState.map((menubarItem) => ({
+                  ...menubarItem,
+                  isActive: false,
+                })),
               )
             }
             key={index}>

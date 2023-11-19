@@ -31,6 +31,8 @@ declare module "styled-components" {
       primaryRoundButton: string;
       transparent: string;
       red: string;
+      blue: string;
+      bgColor1: string;
     };
     margins: {
       mini: string;

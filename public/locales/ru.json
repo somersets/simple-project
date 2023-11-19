@@ -35,5 +35,12 @@
       "login": "Войти",
       "lang": "Язык"
     }
+  },
+  "loginOptionsModal": {
+    "title": "Давайте начнем?!",
+    "loginWithEmail": "Войти с помощью почты"
+  },
+  "loginWithEmailModal": {
+    "title": "Введите вашу почту и пароль"
   }
 }

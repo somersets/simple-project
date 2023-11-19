@@ -82,7 +82,6 @@ const ButtonDropdownContainer = styled.div`
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  background: black;
   z-index: 9999;
   transition: ${({ theme }) => theme.transitions.general};
   &:hover {

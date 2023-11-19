@@ -10,6 +10,8 @@ import {
   useEffect,
 } from "react";
 import { getDefaultAnimation } from "@/shared/utils/animation";
+import Icon from "@/shared/components/icon";
+import emitter from "@/shared/utils/emitter";
 
 const MODAL_ROOT_SELECTOR = "#root-modal";
 
@@ -30,7 +32,7 @@ const unmountedModalStyle = {
 };
 
 export default forwardRef<BaseModal, IModal>(function Modal(
-  { children, headerContent, isOpened = false }: IModal,
+  { children, renderHeader, isOpened = false, modalName }: IModal,
   ref,
 ) {
   const [isModalOpened, setIsModalOpened] = useState(isOpened);
@@ -59,6 +61,19 @@ export default forwardRef<BaseModal, IModal>(function Modal(
     [],
   );
 
+  const modalHandler = (event: any) => {
+    const dataEvent: "open" | "close" = event;
+    setIsModalOpened(dataEvent === "open");
+    setIsMounted(dataEvent === "open");
+  };
+
+  useEffect(() => {
+    emitter.on(modalName, modalHandler);
+    return () => {
+      emitter.off(modalName, modalHandler);
+    };
+  }, [modalName]);
+
   return isModalOpened ? (
     <ModalPortal selector={MODAL_ROOT_SELECTOR}>
       <S.ModalWrapper
@@ -78,9 +93,10 @@ export default forwardRef<BaseModal, IModal>(function Modal(
             }
             $isOpen={isModalOpened}
             role="modal">
-            <S.ModalHeader>
-              {headerContent ? headerContent : <S.ModalLogo />}
-            </S.ModalHeader>
+            <S.ModalCloseCross onClick={() => setIsMounted(!isMounted)}>
+              <Icon color="#fff" icon="faXmark" />
+            </S.ModalCloseCross>
+            <S.ModalHeader>{renderHeader?.()}</S.ModalHeader>
             <S.ModalContent>{children}</S.ModalContent>
           </S.Modal>
         </S.ModalContainer>

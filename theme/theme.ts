@@ -29,6 +29,8 @@ const colors = {
   primaryRoundButton: "#FFFFFF",
   transparent: "transparent",
   red: "#FF4458",
+  blue: "#6A82FB",
+  bgColor1: "#111418",
 };
 
 const margins = {

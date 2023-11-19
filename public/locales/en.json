@@ -35,5 +35,12 @@
       "login": "Login",
       "lang": "Lang"
     }
+  },
+  "loginOptionsModal": {
+    "title": "Let's get started?!",
+    "loginWithEmail": "Login with Email"
+  },
+  "loginWithEmailModal": {
+    "title": "Enter your email and password"
   }
 }
