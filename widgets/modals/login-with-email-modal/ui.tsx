@@ -1,6 +1,7 @@
 import { Modal } from "@/shared/components";
 import { BaseHeaderModal } from "@/entities/base-modal-entities";
 import { MODAL_NAMES } from "@/shared/enums/modal-routes";
+import { LoginWithEmailForm } from "@/features/forms";
 
 export default function LoginWithEmailModal() {
   return (
@@ -9,7 +10,7 @@ export default function LoginWithEmailModal() {
       renderHeader={() => (
         <BaseHeaderModal title="loginWithEmailModal.title" />
       )}>
-      123
+      <LoginWithEmailForm />
     </Modal>
   );
 }

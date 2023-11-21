@@ -42,5 +42,11 @@
   },
   "loginWithEmailModal": {
     "title": "Введите вашу почту и пароль"
+  },
+  "loginWithEmailForm": {
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "emailError": "Неправильный формат",
+    "signIn": "Войти"
   }
 }
