@@ -42,5 +42,11 @@
   },
   "loginWithEmailModal": {
     "title": "Enter your email and password"
+  },
+  "loginWithEmailForm": {
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "emailError": "Invalid format",
+    "signIn": "Log in"
   }
 }

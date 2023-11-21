@@ -6,6 +6,7 @@ import {
 } from "@/app-settings";
 import { DocumentHead } from "@/entities/html-head";
 import { Metadata } from "next";
+import GlobalStyle from "@/theme/global-style";
 
 type Props = {
   children: ReactNode;
@@ -27,6 +28,7 @@ export default async function LocaleLayout({
         <body>
           <ReduxProvider>
             <I18nProvider locale={locale}>
+              <GlobalStyle />
               <div id="root-modal"></div>
               {children}
             </I18nProvider>

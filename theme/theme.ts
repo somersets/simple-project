@@ -29,6 +29,8 @@ const colors = {
   primaryRoundButton: "#FFFFFF",
   transparent: "transparent",
   red: "#FF4458",
+  red0: "#EB5757",
+  red1: "#FCE6E6",
   blue: "#6A82FB",
   bgColor1: "#111418",
 };
