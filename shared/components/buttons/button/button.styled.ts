@@ -34,7 +34,7 @@ const Button = styled.button<IButtonStyled>`
   padding: 5px 10px;
   position: relative;
   width: 100%;
-  max-width: ${({ $isFluid }) => ($isFluid ? "100%" : "200px")};
+  max-width: ${({ $isFluid }) => ($isFluid ? "100%" : "300px")};
   min-width: 120px;
   border: none;
   border-radius: ${({ theme }) => theme.roundCorners.xlarge};

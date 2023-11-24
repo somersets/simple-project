@@ -40,6 +40,9 @@
     "title": "Давайте начнем?!",
     "loginWithEmail": "Войти с помощью почты"
   },
+  "registerOptionsModal": {
+    "title": ""
+  },
   "loginWithEmailModal": {
     "title": "Введите вашу почту и пароль"
   },
@@ -48,5 +51,18 @@
     "passwordLabel": "Пароль",
     "emailError": "Неправильный формат",
     "signIn": "Войти"
+  },
+  "registerForm": {
+    "fillData": "Заполните данные",
+    "emailLabel": "Email",
+    "emailError": "Неправильный формат",
+    "passwordLabel": "Пароль",
+    "first_nameLabel": "Имя",
+    "last_nameLabel": "Фамилия",
+    "genderLabel": "Пол",
+    "genderError": "Пол может быть М или Ж",
+    "phoneLabel": "Телефон",
+    "birthdayLabel": "День рождения",
+    "signUp": "Зарегистрироваться"
   }
 }
