@@ -9,10 +9,11 @@ export default function OpenRegisterOptionsPopupButton() {
 
   return (
     <>
-      <S.RegisterButton
+      <S.OpenRegisterFormButton
+        isFluid={false}
         onClick={() => openModal(MODAL_NAMES.REGISTER_OPTIONS_MODAL)}>
         {t("register")}
-      </S.RegisterButton>
+      </S.OpenRegisterFormButton>
     </>
   );
 }

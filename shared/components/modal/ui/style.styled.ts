@@ -46,8 +46,7 @@ const ModalWrapper = styled.div<ModalStyle>`
 const Modal = styled.div<ModalStyle>`
   position: relative;
   padding: 36px;
-  max-width: 440px;
-  width: 100%;
+  width: fit-content;
   left: 50%;
   top: 50%;
   border-radius: ${({ theme }) => theme.roundCorners.medium};

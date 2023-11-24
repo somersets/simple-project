@@ -1,8 +1,8 @@
 import { Button } from "@/shared/components";
 import styled from "styled-components";
 
-const RegisterButton = styled(Button)`
+const OpenRegisterFormButton = styled(Button)`
   padding: 12px 42px;
 `;
 
-export { RegisterButton };
+export { OpenRegisterFormButton };

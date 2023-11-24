@@ -40,6 +40,9 @@
     "title": "Let's get started?!",
     "loginWithEmail": "Login with Email"
   },
+  "registerOptionsModal": {
+    "title": ""
+  },
   "loginWithEmailModal": {
     "title": "Enter your email and password"
   },
@@ -48,5 +51,18 @@
     "passwordLabel": "Password",
     "emailError": "Invalid format",
     "signIn": "Log in"
+  },
+  "registerForm": {
+    "fillData": "Fill in the data",
+    "emailLabel": "Email",
+    "emailError": "Invalid format",
+    "passwordLabel": "Password",
+    "first_nameLabel": "First Name",
+    "last_nameLabel": "Last Name",
+    "genderLabel": "Gender",
+    "genderError": "Gender must be M or F",
+    "phoneLabel": "Phone",
+    "birthdayLabel": "Birthday",
+    "signUp": "Register"
   }
 }
