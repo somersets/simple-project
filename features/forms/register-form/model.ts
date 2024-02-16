@@ -5,11 +5,7 @@ export interface IRegisterForm {
 }
 
 export interface IRegisterFormFields {
-  first_name: string;
-  last_name: string;
   email: string;
   password: string;
-  gender: string;
-  phone: string;
-  birthday: string;
+  phone: number;
 }

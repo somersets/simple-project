@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { memo } from "react";
 import * as S from "./button.styled";
 import Link from "next/link";
 import { proximaBold } from "@/shared/utils/fonts";
@@ -35,4 +35,4 @@ function Button({
   return href ? <Link href={href}>{button}</Link> : button;
 }
 
-export default Button;
+export default memo(Button);

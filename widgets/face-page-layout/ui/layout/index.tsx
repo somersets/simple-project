@@ -3,10 +3,17 @@ import * as S from "./style.styled";
 import { Typography } from "@/shared/components";
 import { useTranslations } from "next-intl";
 import { OpenRegisterOptionsPopupButton } from "@/features/buttons";
-import { RegisterFormModal, RegisterOptionsModal } from "@/widgets/modals";
+import {
+  ActivationAccountInstructionModal,
+  RegisterFormModal,
+  RegisterOptionsModal,
+} from "@/widgets/modals";
+import useUserData from "@/shared/hooks/use-user-data";
 
 export default function Layout() {
   const t = useTranslations("common");
+  useUserData();
+
   return (
     <S.MainFaceLayout>
       <S.TitleContainer>
@@ -19,6 +26,7 @@ export default function Layout() {
       </S.ButtonContainer>
       <RegisterOptionsModal />
       <RegisterFormModal />
+      <ActivationAccountInstructionModal />
     </S.MainFaceLayout>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import "react-chat-elements/dist/main.css";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -136,7 +137,22 @@ const GlobalStyle = createGlobalStyle`
   .prevent-scroll {
     overflow: hidden;
   }
+  
+  .message-list {
+    //overflow-y: scroll;
+    height: 100%;
+  }
 
+  @property --myColor1 {
+    syntax: '<color>';
+    initial-value: transparent;
+    inherits: false;
+  }
+  @property --myColor2 {
+    syntax: '<color>';
+    initial-value: transparent;
+    inherits: false;
+  }
 `;
 
 export default GlobalStyle;

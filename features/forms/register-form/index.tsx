@@ -1,38 +1,33 @@
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 import { FieldArray, Form, Formik, FormikProps } from "formik";
-import { Input } from "@/shared/components/inputs";
+import { Input, PhoneInput } from "@/shared/components/inputs";
 import * as S from "./style.styled";
 import { Button } from "@/shared/components";
 import { IRegisterForm, IRegisterFormFields } from "./model";
 import useRegisterValidationSchema from "@/shared/hooks/useRegisterFormValidationSchema";
+import { useRegisterMutation } from "@/shared/api/auth";
+import { setUser } from "@/shared/redux/user-slice";
+import { useAppDispatch } from "@/shared/redux/store";
+import { callToastFromError } from "@/shared/components/toast/utils";
+import removeExceptNumbers from "@/shared/utils/string";
+import useModal from "@/shared/hooks/useModal";
+import { MODAL_NAMES } from "@/shared/enums/modal-routes";
+import { useRouter } from "next/navigation";
+import { APP_ROUTES } from "@/shared/enums/app-routes";
+import { validatePhone } from "@/shared/utils";
 
 const initialValues: IRegisterFormFields = {
-  first_name: "",
-  last_name: "",
   email: "",
   password: "",
-  gender: "",
-  phone: "",
-  birthday: "",
+  phone: 0,
 };
 export default function RegisterForm() {
   const t = useTranslations("registerForm");
+  const router = useRouter();
   const registerFormFields: IRegisterForm[] = [
-    {
-      name: "first_name",
-      label: t("first_nameLabel"),
-      type: "text",
-    },
-    {
-      name: "last_name",
-      label: t("last_nameLabel"),
-      type: "text",
-    },
     { name: "email", label: t("emailLabel"), type: "email" },
-    { name: "gender", label: t("genderLabel"), type: "text" },
     { name: "phone", label: t("phoneLabel"), type: "tel" },
-    { name: "birthday", label: t("birthdayLabel"), type: "date" },
     {
       name: "password",
       label: t("passwordLabel"),
@@ -41,26 +36,45 @@ export default function RegisterForm() {
   ];
   const ref = useRef<FormikProps<IRegisterFormFields>>(null);
   const { registerFormSchema } = useRegisterValidationSchema();
-
+  const dispatch = useAppDispatch();
+  const [register] = useRegisterMutation();
+  const { closeModal } = useModal();
   return (
     <Formik
       innerRef={ref}
-      validateOnBlur
+      validateOnBlur={false}
       validateOnChange={false}
       validationSchema={registerFormSchema}
       initialValues={initialValues}
       onSubmit={async (values, { setSubmitting }) => {
-        setSubmitting(true);
-        console.log(values);
-        await new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(true);
-          }, 3000);
-        }).finally(() => {
-          setSubmitting(false);
-        });
+        try {
+          setSubmitting(true);
+          await register({
+            ...values,
+            phone: removeExceptNumbers(values.phone?.toString()),
+          })
+            .unwrap()
+            .then((response) => {
+              closeModal(MODAL_NAMES.REGISTER_FORM_MODAL);
+              dispatch(setUser(response.user));
+              router.push(APP_ROUTES.DASHBOARD);
+            })
+            .finally(() => {
+              setSubmitting(false);
+            });
+        } catch (e) {
+          callToastFromError(e);
+        }
       }}>
-      {({ isSubmitting, errors, values, handleChange, handleBlur }) => {
+      {({
+        isSubmitting,
+        errors,
+        validateField,
+        values,
+        handleChange,
+        handleBlur,
+        isValid
+      }) => {
         return (
           <Form noValidate>
             <S.FormInnerWrapper>
@@ -68,25 +82,50 @@ export default function RegisterForm() {
                 name={"form"}
                 render={({}) => {
                   return registerFormFields.map((item) => {
-                    return (
-                      <Input
-                        key={item.name}
-                        onBlur={handleBlur}
-                        label={item.label}
-                        onChange={handleChange}
-                        value={values[item.name]}
-                        type={item.type}
-                        name={item.name}
-                        errorMessage={errors[item.name]}
-                      />
-                    );
+                    switch (item.type) {
+                      case "tel":
+                        return (
+                          <PhoneInput
+                            key={item.name}
+                            onBlur={handleBlur}
+                            label={item.label}
+                            onChange={handleChange}
+                            value={values[item.name]}
+                            type={item.type}
+                            name={item.name}
+                            validate={(value) =>
+                              validatePhone(value, t("phoneError"))
+                            }
+                            validateField={validateField}
+                            errorMessage={errors[item.name]}
+                          />
+                        );
+                      default:
+                        return (
+                          <Input
+                            key={item.name}
+                            onBlur={handleBlur}
+                            label={item.label}
+                            onChange={handleChange}
+                            value={values[item.name]}
+                            type={item.type}
+                            name={item.name}
+                            validateField={validateField}
+                            errorMessage={errors[item.name]}
+                          />
+                        );
+                    }
                   });
                 }}
               />
             </S.FormInnerWrapper>
 
             <S.RegisterButtonContainer>
-              <Button isFluid={false} type="submit" disabled={isSubmitting}>
+              <Button
+                isFluid={false}
+                type="submit"
+                isLoading={isSubmitting}
+                disabled={isSubmitting}>
                 {t("signUp")}
               </Button>
             </S.RegisterButtonContainer>

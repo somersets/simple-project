@@ -40,6 +40,10 @@
     "title": "Давайте начнем?!",
     "loginWithEmail": "Войти с помощью почты"
   },
+  "activationAccountInstructionModal": {
+    "title": "Необходимо активировать аккаунт",
+    "instruction": "На вашу почту, указанную при регистрации выслано письмо с ссылкой для активации аккаунта"
+  },
   "registerOptionsModal": {
     "title": ""
   },
@@ -48,21 +52,85 @@
   },
   "loginWithEmailForm": {
     "emailLabel": "Email",
+    "emailRequiredErr": "Email это обязательное поле",
     "passwordLabel": "Пароль",
+    "passwordRequiredErr": "Пароль это обязательное поле",
     "emailError": "Неправильный формат",
     "signIn": "Войти"
   },
   "registerForm": {
+    "phoneCode": "Код",
     "fillData": "Заполните данные",
+    "sexOrientationLabel": "Сексуальная ориентация",
+    "sexOrientationRequiredErr": "Это обязательное поле",
     "emailLabel": "Email",
+    "emailRequiredErr": "Email это обязательное поле",
     "emailError": "Неправильный формат",
     "passwordLabel": "Пароль",
+    "passwordRequiredErr": "Пароль это обязательное поле",
     "first_nameLabel": "Имя",
+    "firstNameRequiredErr": "Имя это обязательное поле",
     "last_nameLabel": "Фамилия",
     "genderLabel": "Пол",
     "genderError": "Пол может быть М или Ж",
     "phoneLabel": "Телефон",
-    "birthdayLabel": "День рождения",
+    "phoneError": "Неправильный формат",
+    "birthdayLabel": "Дата рождения",
     "signUp": "Зарегистрироваться"
+  },
+  "profileEditForm": {
+
+  },
+  "sidebarMenu": {
+    "profile": "Профиль",
+    "searchPartner": "Поиск партнера",
+    "messages": "Сообщения",
+    "settings": "Настройки",
+    "matches": "Совпадения",
+    "favorites": "Избранное",
+    "swipeHistory": "История поиска"
+  },
+  "editProfileForm": {
+    "firstNameLabel":  "Имя",
+    "lastNameLabel": "Фамилия",
+    "emailLabel": "Email",
+    "patronymicLabel": "Отчество",
+    "phoneLabel": "Телефон",
+    "birthdayLabel": "Дата рождения",
+    "genderLabel": "Пол",
+    "sexOrientationLabel": "Сексуальная ориентация",
+    "passwordLabel": "Пароль",
+
+    "passwordRequiredError": "Пароль это обязательное поле",
+    "firstNameRequiredError":  "Имя это обязательное поле",
+    "lastNameRequiredError": "Фамилия это обязательное поле",
+    "emailRequiredError":  "Email это обязательное поле",
+    "patronymicRequiredError": "",
+    "phoneRequiredError":  "Телефон это обязательное поле",
+    "birthdayRequiredError": "Дата рождения это обязательное поле",
+    "genderRequiredError":  "Пол это обязательное поле",
+    "sexOrientationRequiredError": "Это обязательное поле",
+    "passwordRequiredErr": "Это обязательное поле",
+    "passwordError":  "",
+    "firstNameError": "",
+    "lastNameError":  "",
+    "emailError": "",
+    "patronymicError":  "",
+    "phoneError": "",
+    "birthdayError":  "",
+    "genderError": "",
+    "sexOrientationError":  "",
+    "apply": "Применить",
+    "profileSettings": "Личные данные",
+
+    "selectOrientation": "Сексуальная ориентация",
+    "successUpdate": "Данный успешно обновлены",
+
+    "m": "М",
+    "w": "Ж"
+  },
+  "editProfilePhotos": {
+    "title": "Ваши фото",
+    "savePhotos": "Сохранить фото"
   }
 }

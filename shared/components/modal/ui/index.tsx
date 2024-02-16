@@ -63,8 +63,13 @@ export default forwardRef<BaseModal, IModal>(function Modal(
 
   const modalHandler = (event: any) => {
     const dataEvent: "open" | "close" = event;
-    setIsModalOpened(dataEvent === "open");
-    setIsMounted(dataEvent === "open");
+    if (dataEvent === "open") {
+      setIsModalOpened(true);
+      setIsMounted(true);
+    }
+    if (dataEvent === "close") {
+      setIsMounted(false);
+    }
   };
 
   useEffect(() => {

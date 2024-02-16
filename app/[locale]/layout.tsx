@@ -7,6 +7,7 @@ import {
 import { DocumentHead } from "@/entities/html-head";
 import { Metadata } from "next";
 import GlobalStyle from "@/theme/global-style";
+import Toast from "@/shared/components/toast";
 
 type Props = {
   children: ReactNode;
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
             <I18nProvider locale={locale}>
               <GlobalStyle />
               <div id="root-modal"></div>
+              <Toast />
               {children}
             </I18nProvider>
           </ReduxProvider>

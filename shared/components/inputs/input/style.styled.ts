@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IInputStyle } from "./model";
+import { Field } from "formik";
 
 const Container = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const Label = styled.label`
   padding: 10px 5px;
 `;
 
-const Input = styled.input<IInputStyle>`
+const Input = styled(Field)<IInputStyle>`
   background: ${({ theme, $isError }) =>
     $isError ? theme.colors.red1 : "#000"};
   width: 100%;
@@ -19,21 +20,21 @@ const Input = styled.input<IInputStyle>`
   color: ${({ theme }) => theme.colors.white};
   display: block;
   border-radius: ${({ theme }) => theme.roundCorners.medium};
-  font-family: var(--font-size--body-1-regular, 1rem);
-  font-size: var(--font-size--body-1-regular, 1rem);
-  font-weight: var(--font-weight--body-1-regular, 400);
-  -webkit-letter-spacing: var(--letter-spacing--body-1-regular, 0);
-  -moz-letter-spacing: var(--letter-spacing--body-1-regular, 0);
-  -ms-letter-spacing: var(--letter-spacing--body-1-regular, 0);
-  letter-spacing: var(--letter-spacing--body-1-regular, 0);
-  line-height: var(--line-height--body-1-regular, 1);
-  padding: 1.1rem 1.3rem;
-  text-transform: var(--letter-casing--body-1-regular, none);
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  padding: 16px 16px;
+  appearance: none;
+`;
+
+const RightIconContainer = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 55px;
+  z-index: 99;
 `;
 
 const ErrorMessage = styled.div`
   color: ${({ theme }) => theme.colors.red0};
-  padding: 10px 5px;
+  padding: 10px 5px 0 5px;
 `;
 
-export { Container, Input, ErrorMessage, Label };
+export { Container, Input, ErrorMessage, Label, RightIconContainer };

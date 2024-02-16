@@ -40,6 +40,10 @@
     "title": "Let's get started?!",
     "loginWithEmail": "Login with Email"
   },
+  "activationAccountInstructionModal": {
+    "title": "You need to activate your account",
+    "instruction": "A letter with a link to activate your account has been sent to your e-mail specified during registration"
+  },
   "registerOptionsModal": {
     "title": ""
   },
@@ -48,21 +52,83 @@
   },
   "loginWithEmailForm": {
     "emailLabel": "Email",
+    "emailRequiredErr": "Email is a required field",
     "passwordLabel": "Password",
+    "passwordRequiredErr": "Password is a required field",
     "emailError": "Invalid format",
     "signIn": "Log in"
   },
   "registerForm": {
+    "phoneCode": "Code",
     "fillData": "Fill in the data",
+    "sexOrientationLabel": "Sex orientation",
+    "sexOrientationRequiredErr": "This is a required field",
     "emailLabel": "Email",
+    "emailRequiredErr": "Email is a required field",
     "emailError": "Invalid format",
     "passwordLabel": "Password",
+    "passwordRequiredErr": "Password is a required field",
     "first_nameLabel": "First Name",
+    "firstNameRequiredErr": "First Name is a required field",
     "last_nameLabel": "Last Name",
     "genderLabel": "Gender",
     "genderError": "Gender must be M or F",
     "phoneLabel": "Phone",
+    "phoneError": "Invalid format",
     "birthdayLabel": "Birthday",
     "signUp": "Register"
+  },
+  "profileEditForm": {
+
+  },
+  "sidebarMenu": {
+    "profile": "My profile",
+    "searchPartner": "Search partner",
+    "messages": "Messages",
+    "matches": "Matches",
+    "settings": "Settings",
+    "favorites": "Favorites",
+    "swipeHistory": "Search history"
+  },
+  "editProfileForm": {
+    "firstNameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+    "emailLabel": "Email",
+    "patronymicLabel": "",
+    "phoneLabel": "Phone",
+    "birthdayLabel": "Birthday",
+    "genderLabel": "Gender",
+    "sexOrientationLabel": "Sex orientation",
+    "passwordLabel": "Password",
+
+    "firstNameRequiredError":  "First Name is a required field",
+    "lastNameRequiredError": "Last Name is a required field",
+    "emailRequiredError":  "Email is a required field",
+    "patronymicRequiredError": "",
+    "phoneRequiredError":  "First Name is a required field",
+    "birthdayRequiredError": "Birthday is a required field",
+    "genderRequiredError":  "Gender is a required field",
+    "sexOrientationRequiredError": "This is a required field",
+    "passwordRequiredError": "This is a required field",
+    "firstNameError": "",
+    "lastNameError": "",
+    "emailError": "",
+    "patronymicError": "",
+    "phoneError": "",
+    "birthdayError": "",
+    "genderError": "",
+    "sexOrientationError": "",
+    "apply": "Apply",
+    "profileSettings": "Personal data",
+
+    "selectOrientation": "Sex orientation",
+    "successUpdate": "Data successfully updated",
+
+    "m": "M",
+    "w": "W"
+  },
+  "editProfilePhotos": {
+    "title": "Your photos",
+    "savePhotos": "Save photos"
   }
 }
