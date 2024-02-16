@@ -32,15 +32,12 @@ export default function EditProfilePhotosForm() {
   const userData = useAppSelector(selectUserData);
 
   useEffect(() => {
-    if (userData && userData?.photos) {
-      const arr = [...userData?.photos];
-
-      for (let i = 0; arr.length < 6; i++) {
-        arr.push({ photo: "", id: i + 1 });
-      }
-      setUserPhotos(arr);
+    const arr = [...(userData?.photos || [])];
+    for (let i = 0; arr.length < 6; i++) {
+      arr.push({ photo: "", id: i + 1 });
     }
-  }, [userData]);
+    setUserPhotos(arr);
+  }, [userData?.photos]);
   const onUpdatePhoto = (event) => {
     if (event.target.files.length) {
       try {

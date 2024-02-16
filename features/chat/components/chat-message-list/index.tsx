@@ -15,7 +15,7 @@ export default function ChatMessageList() {
   useEffect(() => {
     if (userData) {
       try {
-       /* // TODO DYNAMIC RECIPIENT ID
+        /* // TODO DYNAMIC RECIPIENT ID
         getMessagesHistory({ user_id: userData.id, recipient_id: 27 })
           .unwrap()
           .then((response) => {
@@ -32,8 +32,9 @@ export default function ChatMessageList() {
       downButton={true}
       // downButtonBadge={1}
       dataSource={
+        // TODO replace array
         userData && userData.id
-          ? normalizeFormatMessages(messages, userData.id.toString())
+          ? normalizeFormatMessages([], userData.id.toString())
           : []
       }
       referance={ref}

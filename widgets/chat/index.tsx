@@ -49,7 +49,7 @@ export default function Chat() {
           <S.RightSideHeaderRight></S.RightSideHeaderRight>
         </S.RightSideHeader>
         <S.ChatMessageListContainer>
-          <ChatMessageList onSetMessages={onSetMessage} messages={messages} />
+          <ChatMessageList onSetMessages={() => {}} messages={[]} />
         </S.ChatMessageListContainer>
         <ChatInputContainer>
           <ChatInput ws={wsRef} />
